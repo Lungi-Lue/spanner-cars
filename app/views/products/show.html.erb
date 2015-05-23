@@ -1,0 +1,57 @@
+<h4><%= @product.title %></h4>
+<p>
+
+</p>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card-panel ">
+          <%= @product.description %>
+    </div>
+  </div>
+</div>
+
+<ul class="collapsible" data-collapsible="accordion">
+  <li>
+    <div class="collapsible-header"><i class="mdi-editor-format-align-center"></i>Reviews</div>
+        <div class="collapsible-body">
+          <% if @product.product_reviews.any? %>
+                <% @product.product_reviews.each do |product_review| %>
+                  <blockquote class="blue-grey-text darken-4">
+                     <%= product_review.review %>
+
+                  </blockquote>
+
+                <% end %>
+          <% end %>
+        </div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="mdi-image-grain"></i>Related products</div>
+    <div class="collapsible-body">
+      <% if @relatedProducts.any? %>
+          <% @relatedProducts.each do |relatedProduct| %>
+              <blockquote class="blue-grey-text darken-4">
+                <%= relatedProduct.title %><br>
+
+              </blockquote>
+
+          <% end %>
+      <% end %>
+
+      <% if user_signed_in? == false%>
+
+      <% end %>
+    </div>
+  </li>
+
+</ul>
+
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card-panel ">
+      <p class="teal-text darken-4 small">R <%= @product.price %></p>
+      <p><a href="#" class="medium teal-text darken-4"><i class="mdi-action-add-shopping-cart left"></i>Add to cart</a></p>
+    </div>
+  </div>
+</div>
+

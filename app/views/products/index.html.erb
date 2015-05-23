@@ -1,0 +1,22 @@
+<% @products.each do |product| %>
+
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <%= image_tag 'products/bmw.jpg' %>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= product.title %> <i class="mdi-navigation-more-vert right"></i></span>
+        <p class="teal-text darken-4 small">R <%= product.price %></p>
+
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><%= product.title %>  <i class="mdi-navigation-close right"></i></span>
+        <p><%= product.description %></p>
+
+        <p><%= button_to 'Add to Cart', line_items_path(product_id: product)
+          %></p>
+        <p><a href="<%= product_path(product) %>" class="medium teal-text darken-4"><i class="mdi-action-visibility left"></i>View product</a></p>
+      </div>
+    </div>
+
+<% end %>

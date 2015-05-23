@@ -1,0 +1,2 @@
+module ProductMetaInfosHelper
+end

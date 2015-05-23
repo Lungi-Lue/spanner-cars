@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SpannerCars</title>
+  <%# stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'materialize', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'materialize.min', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class="navbar-fixed ">
+  <nav>
+    <div class="nav-wrapper orange">
+      <a href="#!"><%= image_tag 'system/logo.png', class: "brand-logo" %></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+      <% if user_signed_in? == false  %>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="<%= new_user_session_url %>">Sign in</a></li>
+            <li><a href="<%= new_user_password_url %>">Forgot password</a></li>
+            <li><a href="<%= new_user_registration_url %>">Sign up</a></li>
+            <li><a href="<%= products_url %>">Shop</a></li>
+
+          </ul>
+      <% end %>
+
+      <% if user_signed_in? == true  %>
+          <ul class="side-nav" id="mobile-demo">
+            <li><%= current_user.id %></li>
+            <li><a href="<%= edit_user_registration_url %>">Edit account</a></li>
+            <li><a href="<%= products_url %>">Shop</a></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete%></li>
+
+          </ul>
+      <% end %>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+
+
+</body>
+</html>

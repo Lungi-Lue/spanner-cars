@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @product_meta_info.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @product_meta_info.model %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @product_meta_info.color %>
+</p>
+
+<p>
+  <strong>Additional info:</strong>
+  <%= @product_meta_info.additional_info %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_meta_info.product %>
+</p>
+
+<%= link_to 'Edit', edit_product_meta_info_path(@product_meta_info) %> |
+<%= link_to 'Back', product_meta_infos_path %>

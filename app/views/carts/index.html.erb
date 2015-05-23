@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h5>Shopping cart</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carts.each do |cart| %>
+
+      <tr>
+        <td><%# @cart.line_item.price %></td>
+        <!--<td><%# link_to 'Show', cart %></td>-->
+        <!--<td><%# link_to 'Edit', edit_cart_path(cart) %></td>-->
+        <!--<td><%# link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#link_to 'New Cart', new_cart_path %>
