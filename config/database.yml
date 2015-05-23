@@ -13,14 +13,14 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: lungisani
-  host: localhost
-  socket: MySQL
+  username: dualcore_spanner
+  password: lungisani93!!
+  host: dualcore.co.za
+ 
 
 development:
   <<: *default
-  database: spanner_cars_development
+  database: dualcore_spanner_cars
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
